@@ -3,7 +3,22 @@ import { alpha } from "@mui/material/styles";
 const styles = theme => ({
     root: {
         width: "100%",
-        marginBottom: 0
+        marginBottom: 0,
+        "& .MuiInputBase-root": {
+            color: "inherit",
+            width: "100%"
+        },
+        "& .MuiInputBase-input": {
+            padding: theme.spacing(1, 1, 1, 10),
+            transition: theme.transitions.create("width"),
+            width: "100%",
+            [theme.breakpoints.up("sm")]: {
+                width: 120,
+                "&:focus": {
+                    width: 200
+                }
+            }
+        },
     },
     grow: {
         flexGrow: 1
@@ -39,24 +54,6 @@ const styles = theme => ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center"
-    },
-    inputRoot: {
-        color: "inherit",
-        width: "100%"
-    },
-    inputInput: {
-        paddingTop: theme.spacing(1),
-        paddingRight: theme.spacing(1),
-        paddingBottom: theme.spacing(1),
-        paddingLeft: theme.spacing(10),
-        transition: theme.transitions.create("width"),
-        width: "100%",
-        [theme.breakpoints.up("sm")]: {
-            width: 120,
-            "&:focus": {
-                width: 200
-            }
-        }
     }
 });
 
